@@ -13,6 +13,9 @@ use url::Url;
 /// Keys must be valid BCP 47 language tags.
 pub type LangTagMap<T> = std::collections::BTreeMap<String, T>;
 
+// export src/index.fbs
+pub static FLATBUFFERS_INDEX: &'static [u8; 2220] = include_bytes!("index.fbs");
+
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash, Serialize, Deserialize)]
 #[serde(untagged)]
 #[cfg_attr(feature = "poem-openapi", derive(poem_openapi::Union))]
